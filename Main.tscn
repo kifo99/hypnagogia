@@ -1,3 +1,9 @@
 [gd_scene format=3 uid="uid://c84rqw2mlgvfg"]
 
+[ext_resource type="Script" uid="uid://cwvcif45vapp" path="res://Scripts/FOVManager.cs" id="1_glv2v"]
+
 [node name="Node2D" type="Node2D" unique_id=779373504]
+
+[node name="GameManager" type="Node" parent="." unique_id=2146628767]
+script = ExtResource("1_glv2v")
+radius = 30.0

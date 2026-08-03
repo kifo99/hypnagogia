@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://d4bo2m53bn5r4"]
+
+[ext_resource type="Script" uid="uid://dbpwwfggt0drq" path="res://Scripts/GazeOverlay.cs" id="1_idj7w"]
+[ext_resource type="Shader" uid="uid://b4sb6ym6lb027" path="res://Shaders/gaze_mask.gdshader" id="1_kln2b"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kln2b"]
+shader = ExtResource("1_kln2b")
+shader_parameter/gaze_position = Vector2(0, 0)
+shader_parameter/rect_size = Vector2(0, 0)
+shader_parameter/radius = 100.0
+shader_parameter/dark_color = Color(0.06, 0.06, 0.06, 1)
+
+[node name="Main" type="Node2D" unique_id=408398549]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=624000448]
+layer = 10
+
+[node name="GazeOverlay" type="ColorRect" parent="CanvasLayer" unique_id=300456199]
+material = SubResource("ShaderMaterial_kln2b")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_idj7w")
+
+[node name="Managers" type="Node" parent="." unique_id=1429386970]
+
+[node name="FOVManager" type="Node2D" parent="Managers" unique_id=400137412]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1867912610]
+offset_left = 79.0
+offset_top = 52.0
+offset_right = 119.0
+offset_bottom = 92.0
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=500042427]
+offset_left = 230.0
+offset_top = 95.0
+offset_right = 270.0
+offset_bottom = 135.0
+color = Color(1, 0.13999999, 0.13999999, 1)
